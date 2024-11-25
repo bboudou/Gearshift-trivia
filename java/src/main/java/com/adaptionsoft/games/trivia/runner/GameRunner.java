@@ -8,15 +8,22 @@ import com.adaptionsoft.games.uglytrivia.Game;
 public class GameRunner {
 
 	private static boolean notAWinner;
+	public GameRunner(long seed) {
+		this.seed = seed;
+	}
 
-	public static void main(String[] args) {
-		Game aGame = new Game();
-		
+	public static long seed;
+	public static Game aGame = new Game();
+
+
+	public static void main(long seed) {
+
 		aGame.add("Chet");
 		aGame.add("Pat");
 		aGame.add("Sue");
-		
-		Random rand = new Random();
+
+
+		Random rand = new Random(seed);
 	
 		do {
 			
